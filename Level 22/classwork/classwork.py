@@ -24,9 +24,4 @@ def even_odd(numbers_list):
 
 
 even_odd([1, 2, 3, 4, 5, 6, 7])
-
-
-
-
-
     
