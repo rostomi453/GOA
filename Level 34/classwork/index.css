@@ -1,0 +1,13 @@
+.box {
+    background-color: blue;
+    height: 200px;
+    width: 200;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box:hover {
+    transform: scale(2) rotate(45deg);
+}
+
