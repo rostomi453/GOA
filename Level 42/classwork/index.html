@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter Example</title>
+    <style>
+        #counter {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+
+    <script>
+        let counter = 0;
+
+        const counterElement = document.getElementById('counter');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+
+        incrementButton.addEventListener('click', () => {
+            counter++;
+            counterElement.textContent = counter;
+        });
+
+        decrementButton.addEventListener('click', () => {
+            counter--;
+            counterElement.textContent = counter;
+        });
+    </script>
+</body>
+</html>
