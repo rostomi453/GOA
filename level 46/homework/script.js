@@ -1,38 +1,49 @@
-// საიტზე შესვლისას მომხმარებლის სახელი მოითხოვება prompt()-ის მეშვეობით
-window.onload = function () {
-    const userName = prompt("გთხოვთ, შეიყვანოთ თქვენი სახელი:");
-    document.getElementById("user-info").textContent = `გამარჯობა, ${userName}!`;
-  };
-  
-  // საწყისი რიცხვი
-  let currentNumber = 0;
-  
-  // ფუნქცია, რომელიც აბრუნებს input-ში შეყვანილ მნიშვნელობას
-  function getInputValue() {
-    const inputValue = document.getElementById("number-input").value;
-    return parseFloat(inputValue) || 0; // თუ არ არის რიცხვი, აბრუნებს 0-ს
+// მომხმარებლის სახელის მოთხოვნა prompt()-ის საშუალებით
+let userName = prompt("გთხოვთ, შეიყვანეთ თქვენი სახელი:");
+
+// თუ მომხმარებელი არ შეიყვანს ან დააჭერს Cancel-ს, ნაგულისხმევი მნიშვნელობა იქნება "მომხმარებელი"
+if (!userName || userName.trim() === "") {
+  userName = "მომხმარებელი";
+}
+
+// სახელი ვებგვერდზე ზემოთა მარჯვენა კუთხეში გამოჩნდება
+document.querySelector('.user-name').innerText = `მოგესალმებით, ${userName}!`;
+
+// რეზულტატის საწყისი მნიშვნელობა არის 0
+let result = 0;
+
+// რეზულტატის გამოჩენა ეკრანზე
+function updateResult(newResult) {
+  document.getElementById('result').innerText = newResult;
+}
+
+// ღილაკების EventListener-ები
+document.getElementById('add-button').addEventListener('click', function () {
+  const inputValue = parseFloat(document.getElementById('number-input').value);
+  if (!isNaN(inputValue)) {
+    result += inputValue;
+    updateResult(result);
+  } else {
+    alert("გთხოვთ, შეიყვანეთ ვალიდური რიცხვი.");
   }
-  
-  // რიცხვის ეკრანზე განახლება
-  function updateDisplay() {
-    document.getElementById("number-display").textContent = currentNumber;
+});
+
+document.getElementById('subtract-button').addEventListener('click', function () {
+  const inputValue = parseFloat(document.getElementById('number-input').value);
+  if (!isNaN(inputValue)) {
+    result -= inputValue;
+    updateResult(result);
+  } else {
+    alert("გთხოვთ, შეიყვანეთ ვალიდური რიცხვი.");
   }
-  
-  // დამატების ფუნქცია
-  function add() {
-    currentNumber += getInputValue();
-    updateDisplay();
+});
+
+document.getElementById('multiply-button').addEventListener('click', function () {
+  const inputValue = parseFloat(document.getElementById('number-input').value);
+  if (!isNaN(inputValue)) {
+    result *= inputValue;
+    updateResult(result);
+  } else {
+    alert("გთხოვთ, შეიყვანეთ ვალიდური რიცხვი.");
   }
-  
-  // გამოკლების ფუნქცია
-  function subtract() {
-    currentNumber -= getInputValue();
-    updateDisplay();
-  }
-  
-  // გამრავლების ფუნქცია
-  function multiply() {
-    currentNumber *= getInputValue();
-    updateDisplay();
-  }
-  
+});
