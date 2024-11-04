@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relative Position Example</title>
+<style>
+  /* პირველი დივის სტილები */
+  .box1 {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+  }
+
+  /* მეორე დივის სტილები, რომელიც გადაადგილდება relative პოზიციით */
+  .box2 {
+    width: 200px;
+    height: 100px;
+    background-color: lightcoral;
+    position: relative; /* იყენებს relative პოზიციას */
+    left: 300px; /* გადაადგილება მარცხნივ 300 პიქსელით */
+    top: 50px;   /* გადაადგილება ქვემოთ 50 პიქსელით */
+  }
+</style>
+</head>
+<body>
+
+<div class="box1">Box 1</div>
+<div class="box2">Box 2 (Relative Position)</div>
+
+</body>
+</html>

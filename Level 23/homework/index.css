@@ -1,0 +1,46 @@
+/* ბაზისური სტილები */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* მთავარი სათაურის სტილი */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* მთავარი კონტენტის სტილები */
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* სექციის სათაურის სტილი */
+h2 {
+    color: #4CAF50;
+}
+
+/* ქვედა კოლონტიტული */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

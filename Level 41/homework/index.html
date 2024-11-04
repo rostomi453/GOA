@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Tasks</title>
+    <style>
+        /* საწყისი სტილები */
+        #text, #styledText, #resizable, #backgroundImage, #textAppender,
+        #contentContainer, #hiddenElement, #movable {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #hiddenElement {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ელემენტები თითოეული დავალებისთვის -->
+    <div id="text">ფონის ფერის ცვლილება</div>
+    <div id="styledText">ვიზუალური სტილის ცვლილება</div>
+    <div id="resizable">სიგანის ცვლილება</div>
+    <div id="backgroundImage">ფონის სურათის ცვლილება</div>
+    <div id="textAppender">ტექსტის დამატება</div>
+    <button id="increaseNumber">რიცხვის გაზრდა</button>
+    <div id="numberDisplay">რიცხვი: 0</div>
+    <button id="moveBtn">გადაადგილება</button>
+    <div id="movable">გადაადგილებადი ბლოკი</div>
+    <div id="contentContainer">შიგთავსი</div>
+    <div id="hiddenElement">დამალული ელემენტი</div>
+
+    <script>
+        // დავალება 1: ფონის ფერის ცვლილება
+        document.getElementById("text").style.backgroundColor = "lightblue";
+
+        // დავალება 2: ტექსტის ვიზუალის ცვლილება
+        document.getElementById("styledText").style.fontWeight = "bold";
+        document.getElementById("styledText").style.fontStyle = "italic";
+
+        // დავალება 3: სიგანის ცვლილება
+        document.getElementById("resizable").style.width = "200px";
+
+        // დავალება 4: ფონის სურათის ცვლილება
+        document.getElementById("backgroundImage").style.backgroundImage = "url('your-image-url.jpg')";
+        document.getElementById("backgroundImage").style.backgroundSize = "cover";
+
+        // დავალება 5: ტექსტის დამატება `innerText`-ით
+        document.getElementById("textAppender").innerText += " - დამატებული ტექსტი";
+
+        // დავალება 6: რიცხვის გაზრდა `event listener`-ით
+        let number = 0;
+        document.getElementById("increaseNumber").addEventListener("click", function() {
+            number += 1;
+            document.getElementById("numberDisplay").innerText = "რიცხვი: " + number;
+        });
+
+        // დავალება 7: ელემენტის გადაადგილება `event listener`-ით
+        let position = 0;
+        document.getElementById("moveBtn").addEventListener("click", function() {
+            position += 20; // გადაადგილება 20 პიქსელით
+            document.getElementById("movable").style.transform = "translateX(" + position + "px)";
+        });
+
+        // დავალება 8: ტექსტის შეცვლა `innerHTML`-ით
+        document.getElementById("contentContainer").innerHTML = "<p>შეცვლილი ან დამატებული შიგთავსი</p>";
+
+        // დავალება 9: დამალული ელემენტის გამოჩენა
+        document.getElementById("hiddenElement").style.display = "block";
+
+    </script>
+</body>
+</html>

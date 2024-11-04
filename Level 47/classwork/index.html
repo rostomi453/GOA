@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>მომხმარებლის გვერდი</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    }
+    .user-name {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #2d3436;
+    }
+    h2 {
+      margin-top: 10px;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+    }
+    input {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #dfe6e9;
+      outline: none;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #0984e3;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #74b9ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="user-name"></div>
+
+  <h2>გთხოვთ შეიყვანოთ ტექსტი</h2>
+
+  <input type="text" id="user-input" placeholder="ტექსტის შეყვანა">
+  <button id="add-button">დამატება</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

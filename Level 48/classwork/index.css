@@ -1,0 +1,18 @@
+.grandparent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background-color: lightblue;
+    padding: 10px;
+  }
+  
+  .parent {
+    background-color: lightgreen;
+    padding: 10px;
+  }
+  
+  .child {
+    background-color: lightcoral;
+    padding: 10px;
+  }
+  

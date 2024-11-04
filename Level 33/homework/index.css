@@ -1,0 +1,168 @@
+/* https://www.guess-css.app/ , იმუშავეთ ამ საიტზე და ყოველდღე გააკეთეთ მინიმუმ 10 სწორად, გაკეთებულის სქრინშოთუი კი ატვირთეთ github ზე */
+
+
+
+
+
+
+.root {
+    position: absolute;
+    border: 2px solid #e53935;
+    left: 3em;
+  } 
+  .b {
+    position: relative;
+    background-color: #90caf9;
+    left: 3em;
+  } 
+
+
+
+/*---------------------------------------------------------------*/
+
+
+.b .b {
+  background-color: #d7ccc8;
+} 
+.c {
+  background-color: #90caf9;
+} 
+
+
+
+
+/*---------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+root {
+    display: inline;
+    background-color: #b0bec5;
+  } 
+  .a {
+    display: inline-block;
+  } 
+  .b {
+    display: inline;
+    width: 55%;
+  } 
+
+
+
+
+  /*---------------------------------------------------------------*/
+
+
+
+
+  body {
+    display: grid;
+    grid-template-columns: 
+      repeat(2, 2fr) 50% 1fr;
+  } 
+
+
+
+
+
+
+   /*---------------------------------------------------------------*/
+
+
+
+
+   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+   }
+
+
+
+
+
+   /*---------------------------------------------------------------*/
+
+
+
+
+
+   .root {
+    position: absolute;
+    border: 2px solid #1e88e5;
+    left: 3em;
+  } 
+  .b {
+    position: static;
+    background-color: #ffe082;
+    left: 3em;
+  }
+
+
+
+
+
+    /*---------------------------------------------------------------*/
+
+
+
+
+
+
+
+    .a .c {
+        background-color: #ffcdd2;
+      } 
+      .d {
+        background-color: #90caf9;
+      }
+
+
+
+       /*---------------------------------------------------------------*/
+
+
+
+       .root {
+        display: inline-block;
+        background-color: #ffcdd2;
+      } 
+      .b, .a {
+        display: block;
+      } 
+      .c {
+        display: block;
+        width: 30%;
+      }
+
+
+      
+
+       /*---------------------------------------------------------------*/
+       .e23 {
+        grid-column: 2 / span 1;
+        background-color: #ffe082;
+      } 
+
+
+
+
+/*---------------------------------------------------------------*/
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  } 
+
+
+      
