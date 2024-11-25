@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmers Info</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="form-container">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <p id="password-hint">Password must be at least 8 characters, include a number and a special character.</p>
+            
+            <label>
+                <input type="checkbox" id="terms">
+                I agree to the terms and conditions.
+            </label>
+            
+            <button type="button" id="submit-button">Submit</button>
+        </form>
+    </div>
+    
+    <div id="main-site" class="hidden">
+        <h1>Programmers Info</h1>
+        <div>
+            <input type="radio" name="programmer" id="programmer1" value="programmer1">
+            <label for="programmer1">Programmer 1</label>
+            
+            <input type="radio" name="programmer" id="programmer2" value="programmer2">
+            <label for="programmer2">Programmer 2</label>
+            
+            <input type="radio" name="programmer" id="programmer3" value="programmer3">
+            <label for="programmer3">Programmer 3</label>
+        </div>
+        <div id="info-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
