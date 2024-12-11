@@ -1,0 +1,88 @@
+<!--1) შექმენით სამი პ-თაგი და ღილაკზე დაკლიკებისას შეცვალეთ თითოეულის ტექსტი გამარჯობა და ნახვამდიზე ( დაკლიკების მიხედვით )-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Change</title>
+</head>
+<body>
+    <p class="text">ტექსტი 1</p>
+    <p class="text">ტექსტი 2</p>
+    <p class="text">ტექსტი 3</p>
+    <button id="changeText">შეცვალე ტექსტი</button>
+
+    <script>
+        let toggle = true;
+        document.getElementById("changeText").addEventListener("click", function () {
+            const elements = document.getElementsByClassName("text");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].textContent = toggle ? "გამარჯობა" : "ნახვამდის";
+            }
+            toggle = !toggle;
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!--2) შექმენთ სამი ღილაკი, იმის მიხედვით თუ მერამდენე ღილაკია კონსოლში გამოიტანეთ შესაბამისი რიცხვი, მაგ: თუ პირველ ღილაკს აკლიკებთ ჯონსოლში უნდა გამოვიდეს - button: 1-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Numbers</title>
+</head>
+<body>
+    <button class="btn">Button 1</button>
+    <button class="btn">Button 2</button>
+    <button class="btn">Button 3</button>
+
+    <script>
+        const buttons = document.getElementsByClassName("btn");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function () {
+                console.log(`button: ${i + 1}`);
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+<!--3) შექმენით 5 რიგი ელემენტების და თითოეული მომდევნო რიგი (ის ელემენტი რომელიც ქვემიოთაა) წინაზე დიდი უნდა იყოს ორჯერ,
+( სამივე ამოცანაზე გამოიყენეთ getElementsByClassName() )-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Row Scaling</title>
+    <style>
+        .row {
+            border: 1px solid black;
+            margin: 5px 0;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">რიგი 1</div>
+    <div class="row">რიგი 2</div>
+    <div class="row">რიგი 3</div>
+    <div class="row">რიგი 4</div>
+    <div class="row">რიგი 5</div>
+
+    <script>
+        const rows = document.getElementsByClassName("row");
+        let baseWidth = 50; // საწყისი ზომა
+        for (let i = 0; i < rows.length; i++) {
+            rows[i].style.width = `${baseWidth}px`;
+            baseWidth *= 2; // გაორმაგება
+        }
+    </script>
+</body>
+</html>
