@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Counter & Cookie Clicker</title>
+</head>
+<body>
+    <div class="counter">
+        <h2>Counter</h2>
+        <p>Current Value: <span id="counter-value">0</span></p>
+        <div>
+            <label for="increment-value">Increment/Decrement Value:</label>
+            <input type="number" id="increment-value" value="1">
+        </div>
+        <div class="counter-buttons">
+            <button onclick="incrementCounter()">Increase</button>
+            <button onclick="decrementCounter()">Decrease</button>
+            <button onclick="resetCounter()">Reset</button>
+        </div>
+    </div>
+
+    <div class="cookie-clicker">
+        <h2>Cookie Clicker</h2>
+        <p>Cookies Collected: <span id="cookie-count">0</span></p>
+        <button class="cookie" onclick="clickCookie()">
+            <img src="https://via.placeholder.com/100?text=Cookie" alt="Cookie">
+        </button>
+    </div>
+
+  
+    <script src="script.js"></script
+</body>
+</html>

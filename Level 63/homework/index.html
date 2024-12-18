@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Functions</title>
+    <script>
+        function rockPaperScissors(player1, player2) {
+            if (player1 === player2) {
+                return "Tie";
+            } else if (
+                (player1 === "rock" && player2 === "scissors") ||
+                (player1 === "scissors" && player2 === "paper") ||
+                (player1 === "paper" && player2 === "rock")
+            ) {
+                return "Player 1 Wins";
+            } else {
+                return "Player 2 Wins";
+            }
+        }
+
+        function determineWinner(player1Stats, player2Stats) {
+            const player1Strength = player1Stats[0];
+            const player1Speed = player1Stats[1];
+            const player1Intelligence = player1Stats[2];
+
+            const player2Strength = player2Stats[0];
+            const player2Speed = player2Stats[1];
+            const player2Intelligence = player2Stats[2];
+
+            const player1Score = player1Strength * 1 + player1Speed * 2 + (player1Intelligence * (player1Strength + player1Speed) / 10);
+            const player2Score = player2Strength * 1 + player2Speed * 2 + (player2Intelligence * (player2Strength + player2Speed) / 10);
+
+            if (player1Score > player2Score) {
+                return "Player 1 Wins";
+            } else if (player1Score < player2Score) {
+                return "Player 2 Wins";
+            } else {
+                return "Tie";
+            }
+        }
+
+        // Example usage
+        console.log(rockPaperScissors("rock", "scissors"));  // Output: Player 1 Wins
+        console.log(determineWinner([5, 3, 8], [6, 4, 7]));  // Output: Player 1 Wins
+    </script>
+</head>
+<body>
+    <h1>Game Functions Example</h1>
+    <p>Check the browser's console for the output of the example usage.</p>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>გადავიდეთ თუ არა ტესტში</title>
+</head>
+<body>
+    <h1>გადავიდეთ თუ არა ტესტში</h1>
+    <label for="score">შეფასება:</label>
+    <input type="number" id="score" name="score" min="0" max="100">
+    <br>
+    <label for="grade">დამწერი:</label>
+    <input type="text" id="grade" name="grade">
+    <br>
+    <button onclick="checkTest()">შეფასების შემოწმება</button>
+    <p id="result"></p>
+
+    <script>
+        function checkTest() {
+            const score = document.getElementById("score").value;
+            const grade = document.getElementById("grade").value;
+            if (score >= 50 || grade === "A" || grade === "B") {
+                document.getElementById("result").innerText = "თქვენ გადადიხართ ტესტში!";
+            } else {
+                document.getElementById("result").innerText = "თქვენ ვერ გადახვალთ ტესტში.";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>შეგვიძლია თუ არა გასვლა გარეთ</title>
+</head>
+<body>
+    <h1>შეგვიძლია თუ არა გასვლა გარეთ</h1>
+    <label for="weather">ამინდი (კარგი თუ ცუდი):</label>
+    <input type="text" id="weather">
+    <br>
+    <label for="time">დრო (კმარა თუ არა):</label>
+    <input type="number" id="time" min="0">
+    <br>
+    <label for="ready">მზად ვართ გასასვლელად?</label>
+    <input type="checkbox" id="ready">
+    <br>
+    <button onclick="checkExit()">გავალთ თუ არა გარეთ?</button>
+    <p id="result"></p>
+
+    <script>
+        function checkExit() {
+            const weather = document.getElementById("weather").value;
+            const time = document.getElementById("time").value;
+            const ready = document.getElementById("ready").checked;
+            if ((weather === "კარგი" || time >= 30) && ready) {
+                document.getElementById("result").innerText = "შეგვიძლია გასვლა გარეთ!";
+            } else {
+                document.getElementById("result").innerText = "არ შეგვიძლია გასვლა გარეთ.";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>გადავდგათ თუ არა ნაბიჯი</title>
+</head>
+<body>
+    <h1>გადავდგათ თუ არა ნაბიჯი</h1>
+    <label for="barrier">ბარიერი:</label>
+    <input type="checkbox" id="barrier">
+    <br>
+    <label for="space">წასასვლელი სივრცე ხელმისაწვდომია?</label>
+    <input type="checkbox" id="space">
+    <br>
+    <label for="signal">სიგნალი მეორეს მხრიდან:</label>
+    <input type="checkbox" id="signal">
+    <br>
+    <button onclick="checkStep()">გადავდგათ თუ არა ნაბიჯი?</button>
+    <p id="result"></p>
+
+    <script>
+        function checkStep() {
+            const barrier = document.getElementById("barrier").checked;
+            const space = document.getElementById("space").checked;
+            const signal = document.getElementById("signal").checked;
+            if ((!barrier && space) || signal) {
+                document.getElementById("result").innerText = "გადავდგათ ნაბიჯი!";
+            } else {
+                document.getElementById("result").innerText = "არ გადადგამთ ნაბიჯს.";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>უნდა ავიღოთ თუ არა ნივთი</title>
+</head>
+<body>
+    <h1>უნდა ავიღოთ თუ არა ნივთი</h1>
+    <label for="item">ნივთი ხელმისაწვდომია?</label>
+    <input type="checkbox" id="item">
+    <br>
+    <label for="permission">წაღება დასაშვებია?</label>
+    <input type="checkbox" id="permission">
+    <br>
+    <label for="otherPerson">სხვა ადამიანს არ სურს მისი გამოყენება?</label>
+    <input type="checkbox" id="otherPerson">
+    <br>
+    <button onclick="checkItem()">უნდა ავიღოთ ნივთი?</button>
+    <p id="result"></p>
+
+    <script>
+        function checkItem() {
+            const item = document.getElementById("item").checked;
+            const permission = document.getElementById("permission").checked;
+            const otherPerson = document.getElementById("otherPerson").checked;
+            if ((item && permission) || !otherPerson) {
+                document.getElementById("result").innerText = "უნდა ავიღოთ ნივთი!";
+            } else {
+                document.getElementById("result").innerText = "არ ავიღოთ ნივთი.";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>უნდა გავიხსენოთ თუ არა ინფორმაცია</title>
+</head>
+<body>
+    <h1>უნდა გავიხსენოთ თუ არა ინფორმაცია</h1>
+    <label for="task">დავალება აქტუალური?</label>
+    <input type="checkbox" id="task">
+    <br>
+    <label for="needed">ინფორმაცია საჭიროა?</label>
+    <input type="checkbox" id="needed">
+    <br>
+    <label for="timeAvailable">დრო გვაქვს?</label>
+    <input type="checkbox" id="timeAvailable">
+    <br>
+    <button onclick="checkMemory()">უნდა გავიხსენოთ ინფორმაცია?</button>
+    <p id="result"></p>
+
+    <script>
+        function checkMemory() {
+            const task = document.getElementById("task").checked;
+            const needed = document.getElementById("needed").checked;
+            const timeAvailable = document.getElementById("timeAvailable").checked;
+            if ((task || needed) && timeAvailable) {
+                document.getElementById("result").innerText = "უნდა გავიხსენოთ ინფორმაცია!";
+            } else {
+                document.getElementById("result").innerText = "არ უნდა გავიხსენოთ ინფორმაცია.";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>უნდა დავიძინოთ თუ არა</title>
+</head>
+<body>
+    <h1>უნდა დავიძინოთ თუ არა</h1>
+    <label for="late">დრო გვიანია?</label>
+    <input type="checkbox" id="late">
+    <br>
+    <label for="tired">დაღლილი ვართ?</label>
+    <input type="checkbox" id="tired">
+    <br>
+    <label for="earlyRise">მეორე დღეს ადრიანად ადგომა გვჭირდება?</label>
+    <input type="checkbox" id="earlyRise">
+    <br>
+    <label for="lightOff">შუქი გამორთულია?</label>
+    <input type="checkbox" id="lightOff">
+    <br>
+    <button onclick="checkSleep()">უნდა დავიძინოთ?</button>
+    <p id="result"></p>
+
+    <script>
+        function checkSleep() {
+            const late = document.getElementById("late").checked;
+            const tired = document.getElementById("tired").checked;
+            const earlyRise = document.getElementById("earlyRise").checked;
+            const lightOff = document.getElementById("lightOff").checked;
+            if ((late && tired) || (earlyRise && lightOff)) {
+                document.getElementById("result").innerText = "უნდა დავიძინოთ!";
+            } else {
+                document.getElementById("result").innerText = "არ უნდა დავიძინოთ.";
+            }
+        }
+    </script>
+</body>
+</html>
