@@ -1,0 +1,20 @@
+
+  * {
+    
+    background: #2F5A76;
+    -webtik-box-reflect:below -21q;
+   
+  
+    +*{
+      border:32q solid#7EA6DD;
+      border-radius:1in;
+      margin:40 35%140;
+      *{
+        padding:25;
+        margin: 20 30-30-30-30;
+      }
+      
+    }
+  }
+
+
