@@ -1,0 +1,18 @@
+
+  *{
+    background:radial-gradient(1q at 50%80%,#46487C 60px,#EED9D9);
+    *{
+      background:#469DBA;
+      margin:30%60%;
+      *{
+        padding:30;
+        position:fixed;
+        margin:-60 0
+      }
+      p+p{
+        margin:60 220
+      }
+    }
+  }
+
+  
