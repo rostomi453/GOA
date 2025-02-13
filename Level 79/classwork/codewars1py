@@ -1,0 +1,24 @@
+def is_flush(hand):
+    suits = [card[-1] for card in hand]
+    
+    return len(set(suits)) == 1
+def bin_rota(seating_plan):
+    rota = []
+
+    for i, row in enumerate(seating_plan):
+        if i % 2 == 0:
+            rota.extend(row)
+        else:
+            rota.extend(row[::-1])
+    
+    return rota
+
+seating_plan = [
+    ["Stefan", "Raj", "Marie"],
+    ["Alexa", "Amy", "Edward"],
+    ["Liz", "Claire", "Juan"],
+    ["Dee", "Luke", "Katie"]
+]
+
+rota = bin_rota(seating_plan)
+print(rota)
