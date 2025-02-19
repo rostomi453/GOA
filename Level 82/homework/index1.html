@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დროის მესიჯი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>მოითხოვეთ მესიჯი გარკვეული დროის შემდეგ</h2>
+    <label for="time">შეიყვანეთ დრო (წუთებში): </label>
+    <input type="number" id="time" placeholder="მინუტი" min="1">
+    <br><br>
+    <label for="message">შეიყვანეთ მესიჯი: </label>
+    <input type="text" id="message" placeholder="მესიჯი">
+    <br><br>
+    <button onclick="scheduleMessage()">დასაწყები</button>
+
+    <div id="message-box">
+        <p id="message-text"></p>
+    </div>
+
+    <script>
+        function scheduleMessage() {
+            const time = document.getElementById('time').value;
+            const message = document.getElementById('message').value;
+
+            if (time && message) {
+                setTimeout(() => {
+                    document.getElementById('message-text').innerText = message;
+                    document.getElementById('message-box').style.display = 'block';
+                }, time * 60000);  
+            } else {
+                alert('გთხოვთ, შეიყვანოთ დრო და მესიჯი!');
+            }
+        }
+    </script>
+</body>
+</html>

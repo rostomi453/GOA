@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დროის თვლა</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 100px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #counter {
+            font-size: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>დროის თვლა</h1>
+    <label for="timeInput">შეიყვანეთ დრო (მლ.წმ):</label>
+    <input type="number" id="timeInput" min="0" max="10000" value="5000">
+    <br>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <div id="counter">0</div>
+
+    <script>
+        let timer;
+        let count = 0;
+        let timeLimit = 0;
+
+        function startTimer() {
+            stopTimer(); 
+            count = 0;
+            timeLimit = parseInt(document.getElementById('timeInput').value) / 1000;
+            document.getElementById('counter').innerText = count;
+
+            timer = setInterval(() => {
+                if (count < timeLimit) {
+                    count++;
+                    document.getElementById('counter').innerText = count;
+                } else {
+                    clearInterval(timer);
+                    document.getElementById('counter').innerText = "Time's up";
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>
