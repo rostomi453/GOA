@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ელემენტებზე წვდომა</title>
+    <style>
+        .red-text {
+            color: red;
+        }
+        .blue-box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- getElementById -->
+    <h1 id="title">საწყისი ტექსტი</h1>
+
+    <!-- getElementsByClassName -->
+    <p class="red-text">პირველი პარაგრაფი</p>
+    <p class="red-text">მეორე პარაგრაფი</p>
+
+    <!-- getElementsByTagName -->
+    <div class="blue-box"></div>
+    <div class="blue-box"></div>
+    
+    <script>
+        // 1. getElementById
+        let titleElement = document.getElementById("title");
+        titleElement.innerHTML = "ცვლილებული ტექსტი";
+        titleElement.style.color = "green";
+
+        // 2. getElementsByClassName
+        let paragraphs = document.getElementsByClassName("red-text");
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerHTML = "შეცვლილი პარაგრაფი";
+            paragraphs[i].style.fontSize = "20px";
+        }
+
+        // 3. getElementsByTagName
+        let boxes = document.getElementsByTagName("div");
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.backgroundColor = "orange";
+        }
+    </script>
+
+</body>
+</html>
