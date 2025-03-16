@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify P Tags</title>
+    <style>
+        div {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 10 div-ის შექმნა
+        for (let i = 0; i < 10; i++) {
+            let div = document.createElement("div");
+            let p = document.createElement("p");
+            p.textContent = `ეს არის P თეგი ${i + 1}`;
+            div.appendChild(p);
+            document.body.appendChild(div);
+        }
+
+        // ყველა div-ის შიგნით არსებული p თეგის არჩევა და ფონტის ცვლილება
+        let pTags = document.querySelectorAll("div p");
+        pTags.forEach(p => {
+            p.style.fontSize = "3px";
+        });
+    </script>
+</body>
+</html>

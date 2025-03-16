@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Styling with JavaScript</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- id-იანი div-ები -->
+    <div id="box1">1</div>
+    <div id="box2">2</div>
+    <div id="box3">3</div>
+    <div id="box4">4</div>
+    <div id="box5">5</div>
+    <div id="box6">6</div>
+    <div id="box7">7</div>
+    <div id="box8">8</div>
+    <div id="box9">9</div>
+    <div id="box10">10</div>
+
+    <!-- class-იანი div-ები -->
+    <div class="class-box">A</div>
+    <div class="class-box">B</div>
+    <div class="class-box">C</div>
+    <div class="class-box">D</div>
+    <div class="class-box">E</div>
+    <div class="class-box">F</div>
+    <div class="class-box">G</div>
+    <div class="class-box">H</div>
+    <div class="class-box">I</div>
+    <div class="class-box">J</div>
+
+    <!-- ჩვეულებრივი div-ები -->
+    <div>α</div>
+    <div>β</div>
+    <div>γ</div>
+    <div>δ</div>
+    <div>ε</div>
+    <div>ζ</div>
+    <div>η</div>
+    <div>θ</div>
+    <div>ι</div>
+    <div>κ</div>
+
+    <script>
+        // 1. ID-ით არჩევა და სტილიზაცია
+        for (let i = 1; i <= 10; i++) {
+            let box = document.getElementById(`box${i}`);
+            box.style.backgroundColor = `rgb(${i * 25}, ${255 - i * 20}, ${i * 15})`;
+            box.style.color = "white";
+            box.style.borderRadius = "10px";
+        }
+
+        // 2. Class-ით არჩევა და სტილიზაცია
+        let classBoxes = document.querySelectorAll('.class-box');
+        classBoxes.forEach((box, index) => {
+            box.style.backgroundColor = `rgb(${255 - index * 20}, ${index * 20}, 200)`;
+            box.style.color = "white";
+            box.style.border = "2px solid black";
+        });
+
+        // 3. ყველა div-ის სტილიზაცია
+        let allDivs = document.querySelectorAll('body > div');
+        allDivs.forEach((div, index) => {
+            div.style.fontSize = "20px";
+            div.style.display = "flex";
+            div.style.alignItems = "center";
+            div.style.justifyContent = "center";
+            div.style.boxShadow = "2px 2px 5px rgba(0,0,0,0.3)";
+        });
+    </script>
+
+</body>
+</html>

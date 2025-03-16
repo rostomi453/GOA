@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+</head>
+<body>
+    <h2>Click a button to see the image!</h2>
+
+    <img id="animalImage" src="" alt="Animal Image" width="300" />
+
+    <div>
+        <button onclick="changeImage('cat')">Cat</button>
+        <button onclick="changeImage('dog')">Dog</button>
+    </div>
+
+    <script>
+        function changeImage(animal) {
+            let image = document.getElementById('animalImage');
+            if (animal === 'cat') {
+                image.src = 'https://placekitten.com/300/300'; // Cat image
+            } else if (animal === 'dog') {
+                image.src = 'https://placedog.net/300/300'; // Dog image
+            }
+        }
+    </script>
+</body>
+</html>
