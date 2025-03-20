@@ -1,0 +1,15 @@
+
+  *{
+    background:#EAC049;
+    border:22q solid#51A499;
+    margin:60 110;
+    *{
+      margin:-60 0 140 140;
+      padding:10;
+      -webtk-box-reflect:left 148p;
+      *{
+        position:fixed;
+        margin:170-230
+      }
+    }
+  }
