@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missions List</title>
+    <style>
+        #container {
+            width: 300px;
+            min-height: 300px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: blue;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="userInput" placeholder="შეიყვანეთ რიცხვი">
+    <button onclick="addMission()">დამატება</button>
+    
+    <div id="container"></div>
+
+    <script>
+        const container = document.getElementById("container");
+
+        function getRandomColor() {
+            const colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "cyan", "magenta"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function addMission() {
+            let value = parseInt(document.getElementById("userInput").value);
+            if (isNaN(value)) return;
+
+            let newElement = document.createElement("div");
+            newElement.classList.add("box");
+            newElement.style.backgroundColor = getRandomColor();
+            newElement.innerText = value;
+
+            if (value > 20) {
+                container.appendChild(newElement);
+            } else {
+                container.insertBefore(newElement, container.firstChild);
+            }
+
+            if (value % 10 === 1) {
+                addSpecialBox("red");
+            } else if (value % 10 === 2) {
+                addSpecialBox("green");
+            } else if (value % 10 === 3) {
+                addSpecialBox("blue");
+            }
+
+            if (value % 2 === 0) {
+                let blueCircle = document.createElement("div");
+                blueCircle.classList.add("circle");
+                container.appendChild(blueCircle);
+            } else {
+                let redSquare = document.createElement("div");
+                redSquare.classList.add("box");
+                redSquare.style.backgroundColor = "red";
+                container.insertBefore(redSquare, container.firstChild);
+            }
+        }
+
+        function addSpecialBox(color) {
+            let specialBox = document.createElement("div");
+            specialBox.classList.add("box");
+            specialBox.style.backgroundColor = color;
+            container.appendChild(specialBox);
+        }
+
+        function cycleContainers() {
+            for (let i = 0; i < 10; i++) {
+                let div = document.createElement("div");
+                div.classList.add("box");
+                div.style.backgroundColor = getRandomColor();
+                div.innerText = i + 1;
+
+                if (i % 2 === 0) {
+                    container.insertBefore(div, container.firstChild);
+                } else {
+                    container.appendChild(div);
+                }
+            }
+        }
+
+        cycleContainers();
+    </script>
+
+</body>
+</html>

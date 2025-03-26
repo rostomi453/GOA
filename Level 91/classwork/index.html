@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დივი ციკლი</title>
+    <style>
+        .box {
+            background-color: lightblue;
+            border: 1px solid blue;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="display: flex; flex-direction: column; align-items: center;"></div>
+
+    <script>
+        let container = document.getElementById("container");
+        let size = 20;
+        let prepend = true;
+
+        for (let i = 1; i <= 10; i++) {
+            let div = document.createElement("div");
+            div.className = "box";
+            div.style.width = size + "px";
+            div.style.height = size + "px";
+            div.textContent = "Box " + i;
+
+            if (prepend) {
+                container.prepend(div);
+            } else {
+                container.appendChild(div);
+            }
+
+            size *= 2;
+            prepend = !prepend;
+        }
+    </script>
+</body>
+</html>
