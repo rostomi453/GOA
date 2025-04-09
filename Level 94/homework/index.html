@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Child Example</title>
+    <style>
+        .child {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Div კონტეინერები -->
+<div id="container1">
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+    <div class="child">Child 3</div>
+    <div class="child">Child 4</div>
+</div>
+
+<div id="container2">
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+</div>
+
+<div id="container3">
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+    <div class="child">Child 3</div>
+</div>
+
+<!-- ღილაკები -->
+<button onclick="styleChild(3)">Style Child 3 in container 1</button>
+<button onclick="checkDiv(1)">Check Div 1 for child</button>
+
+<!-- P ელემენტები -->
+<div id="p-container">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+</div>
+<button onclick="colorFirstP()">Make First P Red</button>
+
+<script>
+// 1. Child ფერის მიცემა, რომელიც მომხმარებლის მიერ არის არჩეული
+function styleChild(n) {
+    let container = document.getElementById('container1');
+    let children = container.getElementsByClassName('child');
+    if (n >= 1 && n <= children.length) {
+        children[n - 1].style.backgroundColor = 'yellow'; // ბავშვის ფერის შეცვლა
+    }
+}
+
+// 2. დავალება - შემოწმება თუ div-ს აქვს child ელემენტი
+function checkDiv(n) {
+    let container;
+    if (n === 1) container = document.getElementById('container1');
+    else if (n === 2) container = document.getElementById('container2');
+    else if (n === 3) container = document.getElementById('container3');
+
+    if (container && container.children.length > 0) {
+        alert("This Div has child");
+    } else {
+        alert("This Div has no child");
+    }
+}
+
+// 3. ყველა child სხვადასხვა ფერით
+function styleAllChildren() {
+    let containers = document.querySelectorAll('div');
+    containers.forEach(container => {
+        let children = container.getElementsByClassName('child');
+        for (let i = 0; i < children.length; i++) {
+            children[i].style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`; // შემთხვევითი ფერი
+        }
+    });
+}
+styleAllChildren();
+
+// 4. პირველი p ელემენტის გახდომა წითელი ღილაკზე დაჭერისას
+function colorFirstP() {
+    let firstP = document.querySelector('#p-container p');
+    firstP.style.color = 'red';
+}
+</script>
+
+</body>
+</html>
